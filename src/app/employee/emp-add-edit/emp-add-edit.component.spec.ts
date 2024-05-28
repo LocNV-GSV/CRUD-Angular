@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmployeeService } from '../employee.service';
 import 'zone.js';
 import { MaterialModule } from '../../app.module';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 describe('EmpAddEditComponent', () => {
   let component: EmpAddEditComponent;
@@ -16,7 +17,10 @@ describe('EmpAddEditComponent', () => {
 
   beforeEach(() => TestBed.configureTestingModule({
     imports: [HttpClientModule, HttpClientTestingModule, MaterialModule],
-    providers: [EmployeeService]
+    providers: [
+      EmployeeService,
+      { provide: MatDialogRef, useValue: {} },
+      { provide: MAT_DIALOG_DATA, useValue: [] },]
   }));
 
   beforeEach(async () => {
@@ -25,6 +29,6 @@ describe('EmpAddEditComponent', () => {
   });
 
   it('should create', () => {
-    // expect(component).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 });
