@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const MaterialModule = [
   MatToolbarModule,
@@ -48,7 +49,8 @@ export const MaterialModule = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ...MaterialModule
+    BrowserAnimationsModule,
+    ...MaterialModule,
   ],
   exports: [
     BrowserModule,
